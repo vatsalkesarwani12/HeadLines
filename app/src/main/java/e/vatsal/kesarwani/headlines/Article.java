@@ -3,6 +3,7 @@ package e.vatsal.kesarwani.headlines;
 
 public class Article {
 
+    private Source source;
     private String author;
     private String title;
     private String description;
@@ -11,6 +12,14 @@ public class Article {
     private String publishedAt;
     private String content;
 
+
+    public Source getSource() {
+        return source;
+    }
+
+    public void setSource(Source source) {
+        this.source = source;
+    }
 
     public String getAuthor() {
         return author;
@@ -68,11 +77,13 @@ public class Article {
         this.content = content;
     }
 
-    public Article(String author, String title, String description,  String publishedAt, String content) {
-        this.author = author;
-        this.title = title;
-        this.description = description;
-        this.publishedAt = publishedAt;
-        this.content = content;
-    }
+
+    /*@Override
+    public String toString() {
+        return "articles{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }*/
 }

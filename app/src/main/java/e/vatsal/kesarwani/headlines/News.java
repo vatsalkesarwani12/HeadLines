@@ -5,18 +5,14 @@ import java.util.List;
 
 public class News {
 
-    private ArrayList<Article> article;
+    private ArrayList<Article> articles;
 
     public ArrayList<Article> getArticle() {
-        return article;
+        return articles;
     }
 
     public void setArticle(ArrayList<Article> article) {
-        this.article = article;
-    }
-
-    public News(ArrayList<Article> article) {
-        this.article = article;
+        this.articles = article;
     }
 
 

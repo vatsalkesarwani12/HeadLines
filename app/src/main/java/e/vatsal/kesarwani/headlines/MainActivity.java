@@ -39,12 +39,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txt=(TextView)findViewById(R.id.text);
-
         Gson gson= new GsonBuilder().serializeNulls().create();
 
-        HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
+       HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
         OkHttpClient okHttpClient= new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
                 .build();
@@ -54,34 +52,28 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();
+        ApiClient api = retrofit.create(ApiClient.class);
 
-        api=retrofit.create(ApiClient.class);
-
-        getNew();
-
-    }
-    public void getNew()
-    {
-        Call<News> call;
-        call =api.getNews();
+        Call<News> call = api.getNews();
 
         call.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 if(!response.isSuccessful())
                 {
-                    txt.setText("Code: "+response.code());
+                    txt.setText("Code: "+response.body().getArticle().get(1).getAuthor());
                     return;
                 }
 
-                List<Article> art = response.body().getArticle();
+                ArrayList<Article> art = response.body().getArticle();
+                Log.v("Tag", "" + art.get(1).getAuthor());
 
                 try {
 
                     for (int i = 0; i < art.size(); i++) {
                         String content = "";
-                        Log.v("Tag", "" + art.get(i).getAuthor());
-                        content += "Author: " + art.get(i).getAuthor() + "\n ";
+                        content += "Name: " + art.get(i).getSource().getName() + "\n";
+                        content +="Author: "+art.get(i).getAuthor()+"\n";
                         content += "Title: " + art.get(i).getTitle() + "\n";
                         content += "Description: " + art.get(i).getDescription() + "\n";
                         content += "Published At: " + art.get(i).getPublishedAt() + "\n";
