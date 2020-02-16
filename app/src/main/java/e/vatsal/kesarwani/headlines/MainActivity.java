@@ -1,9 +1,14 @@
 package e.vatsal.kesarwani.headlines;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +18,8 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.*;
 
+import e.vatsal.kesarwani.headlines.RecyclerView.RecycleData;
+import e.vatsal.kesarwani.headlines.RecyclerView.RecyclerAdapter;
 import e.vatsal.kesarwani.headlines.api.ApiClient;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -28,17 +35,25 @@ public class MainActivity extends AppCompatActivity {
     public final String apiKey="2a75f3dbcae446c4868c3e50e889dab7";
     public final String country="in";
     public final String category="technology";
+    private Context context=this;
 
+    private RecyclerView mrecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerAdapter mrecycleAdapter;
 
-    private TextView txt;
+    final ArrayList<RecycleData> mdata=new ArrayList<>();
+
     public ApiClient api;
+
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt=(TextView)findViewById(R.id.text);
+        text=(TextView)findViewById(R.id.tee);
+
         Gson gson= new GsonBuilder().serializeNulls().create();
 
        HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
@@ -52,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();
-        ApiClient api = retrofit.create(ApiClient.class);
+        api = retrofit.create(ApiClient.class);
 
         Call<News> call = api.getNews();
 
@@ -61,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<News> call, Response<News> response) {
                 if(!response.isSuccessful())
                 {
-                    txt.setText("Code: "+response.body().getArticle().get(1).getAuthor());
+                    //titletxt.setText("Code: "+response.body().getArticle().get(1).getAuthor());
                     return;
                 }
 
@@ -79,20 +94,33 @@ public class MainActivity extends AppCompatActivity {
                         content += "Published At: " + art.get(i).getPublishedAt() + "\n";
                         content += "Content: " + art.get(i).getContent() + "\n\n";
 
-                        txt.append(content);
+                       // titletxt.append(content);
+                        mdata.add(new RecycleData(art.get(i).getUrlToImage(),art.get(i).getTitle(),art.get(i).getDescription(),art.get(i).getSource().getName()));
                     }
                 }
                 catch(Exception e)
                 {
-                    txt.setText(""+e);
+                    text.setText(""+e);
                 }
+
+                //recycler view setup
+                mrecyclerView=findViewById(R.id.recycle);
+                mrecyclerView.setHasFixedSize(true);
+
+                mLayoutManager=new LinearLayoutManager(context);
+
+                mrecycleAdapter=new RecyclerAdapter(mdata,MainActivity.this);
+
+                mrecyclerView.setLayoutManager(mLayoutManager);
+                mrecyclerView.setAdapter(mrecycleAdapter);
 
             }
 
             @Override
             public void onFailure(Call<News> call, Throwable t) {
-                txt.setText(t.getMessage());
+                text.setText(t.getMessage());
             }
         });
+
     }
 }
