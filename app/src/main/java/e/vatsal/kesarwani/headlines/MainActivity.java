@@ -123,4 +123,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed()        //not functioning so improve it
+    {
+        super.onBackPressed();
+        finish();
+    }
 }
