@@ -5,9 +5,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeepNews">
-    
+    tools:context=".DeepNews"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <include
         layout="@layout/title"/>
-    
+
+    </LinearLayout>
+
+
+   <com.google.android.material.card.MaterialCardView
+       android:layout_height="match_parent"
+       android:layout_width="match_parent"
+       android:layout_margin="10dp"
+       app:cardCornerRadius="15dp"
+       android:elevation="4dp"
+       android:padding="5dp"
+       app:strokeColor="#000"
+       app:strokeWidth="1dp"
+       app:cardPreventCornerOverlap="false"
+       >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="5dp">
+           <ImageView
+               android:id="@+id/newsImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/image"
+               android:scaleType="fitXY"
+               />
+       </FrameLayout>
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_margin="5dp"
+           android:background="@color/colorAccent"
+           android:alpha="0.25"/>
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:src="@drawable/round_corner"/>
+
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginTop="15dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:layout_marginBottom="50dp"
+           android:id="@+id/news_scroll_view">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/news_title"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="#fff"
+                   android:fontFamily="@font/roboto_black"
+                   android:textStyle="bold"
+                   android:text="Title"
+                   android:textSize="20dp"
+                   android:layout_weight="1"
+                   />
+
+               <TextView
+                   android:id="@+id/news_description"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentBottom="true"
+                   android:layout_marginTop="15dp"
+                   android:layout_marginBottom="15dp"
+                   android:layout_weight="1"
+                   android:fontFamily="@font/roboto_regular"
+                   android:text="Description"
+                   android:textColor="#fff"
+                   android:textSize="18dp" />
+
+               <TextView
+                   android:id="@+id/news_content"
+                   android:layout_marginTop="15dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="#fff"
+                   android:fontFamily="@font/roboto_light"
+                   android:text="Content"
+                   android:textSize="18dp"
+                   android:layout_weight="1"
+                   />
+
+           </LinearLayout>
+
+       </ScrollView>
+
+           <TextView
+               android:id="@+id/news_name"
+               android:layout_marginTop="15dp"
+               android:layout_marginBottom="15dp"
+               android:layout_marginLeft="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentEnd="true"
+               android:textColor="#fff"
+               android:layout_marginEnd="15dp"
+               android:fontFamily="@font/roboto_regular"
+               android:text="Name"
+               android:paddingTop="1dp"
+               android:paddingBottom="1dp"
+               android:paddingLeft="3dp"
+               android:paddingRight="3dp"
+               android:background="@color/colorAccent"
+               android:textSize="14dp"
+               android:layout_weight="1"
+               />
+
+       </RelativeLayout>
+
+   </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

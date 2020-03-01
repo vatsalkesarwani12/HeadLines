@@ -26,11 +26,25 @@ public class splash extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    sleep(2000);
-                    progressBar.setProgress(500);
+                    /*sleep(500);
+                    for(int i=0;i<=25;i++)
+                    progressBar.setProgress(i);
+                    sleep(500);
+                    for(int i=26;i<=50;i++)
+                    progressBar.setProgress(i);
+                    sleep(500);
+                    for(int i=51;i<=75;i++)
+                    progressBar.setProgress(i);
+                    sleep(500);
+                    for(int i=76;i<=100;i++)
+                    progressBar.setProgress(i);*/
+                    for(int i=0;i<=100;i++)
+                    {
+                        progressBar.setProgress(i);
+                        sleep(20);
+                    }
                 }
                 catch (InterruptedException e) {
-                    progressBar.setProgress(1000);
                     e.printStackTrace();
                 }
                 finally {

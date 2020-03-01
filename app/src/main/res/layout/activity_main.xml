@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-      android:layout_height="match_parent"
-      android:layout_width="match_parent"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/title" />
+
+    </LinearLayout>
+
+<androidx.core.widget.NestedScrollView
+      android:layout_height="match_parent"
+      android:layout_width="match_parent">
 
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical">
-
-        <include
-            layout="@layout/title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -31,7 +43,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tee"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    </LinearLayout>
 
     <!--<androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -50,6 +65,8 @@
 
     </androidx.core.widget.NestedScrollView>  -->
 
-    </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                         content += "Content: " + art.get(i).getContent() + "\n\n";
 
                        // titletxt.append(content);
-                        mdata.add(new RecycleData(art.get(i).getUrlToImage(),art.get(i).getTitle(),art.get(i).getDescription(),art.get(i).getSource().getName()));
+                        mdata.add(new RecycleData(art.get(i).getUrlToImage(),art.get(i).getTitle(),art.get(i).getDescription(),art.get(i).getSource().getName(),art.get(i).getContent(),art.get(i).getUrlToImage()));
                     }
                 }
                 catch(Exception e)
@@ -124,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     @Override
-    public void onBackPressed()        //not functioning so improve it
-    {
+    public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        finishAffinity();    //it will erase all the stack of previous activity
+        finish();            //end the activity
     }
 }
