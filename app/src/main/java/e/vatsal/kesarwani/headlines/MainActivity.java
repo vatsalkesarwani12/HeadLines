@@ -3,6 +3,7 @@ package e.vatsal.kesarwani.headlines;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
 import android.media.Image;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mrecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerAdapter mrecycleAdapter;
+    private SwipeRefreshLayout mSwipe;
 
     final ArrayList<RecycleData> mdata=new ArrayList<>();
 
@@ -53,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         text=(TextView)findViewById(R.id.tee);
+        mSwipe=findViewById(R.id.refresh);
+
+        mSwipe.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        mSwipe.setRefreshing(true);
+                    }
+                }
+        );
 
         Gson gson= new GsonBuilder().serializeNulls().create();
 

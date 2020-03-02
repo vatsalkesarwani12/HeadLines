@@ -10,9 +10,7 @@
     android:layout_height="225dp"
     android:layout_margin="1dp"
     android:background="@drawable/border"
-    android:layout_marginTop="2dp"
-    >
-
+    android:layout_marginTop="2dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
