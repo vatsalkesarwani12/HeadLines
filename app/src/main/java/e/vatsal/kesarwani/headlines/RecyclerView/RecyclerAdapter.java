@@ -89,7 +89,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    Toast.makeText(context,"Loading",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"Wait...",Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(context, DeepNews.class);
                     intent.putExtra("title",titletxt.getText());
