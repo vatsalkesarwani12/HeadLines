@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         api = retrofit.create(ApiClient.class);
 
-        Call<News> call = api.getNews("technology","2a75f3dbcae446c4868c3e50e889dab7");
+        //Call<News> call = api.getNews("technology","2a75f3dbcae446c4868c3e50e889dab7");
+        Call<News> call = api.getNews();
 
         call.enqueue(new Callback<News>() {
             @Override

@@ -12,4 +12,8 @@ public interface ApiClient {
     Call<News> getNews(@Query("category") String category,
                        @Query("apiKey") String apiKey
     );
+
+
+    @GET("http://newsapi.org/v2/top-headlines?country=in&apiKey=2a75f3dbcae446c4868c3e50e889dab7")
+    Call<News> getNews();
 }
