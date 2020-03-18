@@ -20,6 +20,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //TODO ADD DRAWER TO THE ACTIVITY
+        //TODO ADD THE FIREBASE FIRESTORE DATABASE TO STORE THE LIKED NEWS FROM THE USER
 
         buss=findViewById(R.id.business);
         enter=findViewById(R.id.entertainment);
