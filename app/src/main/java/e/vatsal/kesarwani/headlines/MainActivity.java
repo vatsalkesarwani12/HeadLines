@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
     public final String base_url="https://newsapi.org/v2/";
     public final String apiKey="2a75f3dbcae446c4868c3e50e889dab7";
     public final String country="in";
-    public final String category="technology";
+    public  String category;
     private Context context=this;
+    private Intent intent;
 
     private RecyclerView mrecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -68,21 +70,25 @@ public class MainActivity extends AppCompatActivity {
 
         Gson gson= new GsonBuilder().serializeNulls().create();
 
-       HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
+        intent=getIntent();
+        category=intent.getStringExtra("news");
+
+
+       /*HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient= new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
-                .build();
+                .build();*/
 
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(base_url)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .client(okHttpClient)
+                //.client(okHttpClient)
                 .build();
         api = retrofit.create(ApiClient.class);
 
-        //Call<News> call = api.getNews("technology","2a75f3dbcae446c4868c3e50e889dab7");
-        Call<News> call = api.getNews();
+        Call<News> call = api.getNews(category,apiKey);
+       // Call<News> call = api.getNews();
 
         call.enqueue(new Callback<News>() {
             @Override
@@ -136,10 +142,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finishAffinity();    //it will erase all the stack of previous activity
-        finish();            //end the activity
-    }
+
 }
