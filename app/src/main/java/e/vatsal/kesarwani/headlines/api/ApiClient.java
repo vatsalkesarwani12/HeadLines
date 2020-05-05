@@ -1,9 +1,8 @@
 package e.vatsal.kesarwani.headlines.api;
 
-import e.vatsal.kesarwani.headlines.News;
+import e.vatsal.kesarwani.headlines.Model.News;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiClient {

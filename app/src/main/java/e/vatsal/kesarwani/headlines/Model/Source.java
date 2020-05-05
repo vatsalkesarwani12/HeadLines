@@ -1,4 +1,4 @@
-package e.vatsal.kesarwani.headlines;
+package e.vatsal.kesarwani.headlines.Model;
 
 public class Source {
 

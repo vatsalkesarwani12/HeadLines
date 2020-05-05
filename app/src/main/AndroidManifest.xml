@@ -11,17 +11,21 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".HomeActivity"
-            android:theme="@style/MaterialTheme"/>
-        <activity android:name=".splash">
+        <activity android:name=".Activity.SqlDatabase"></activity>
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:theme="@style/MaterialTheme" />
+        <activity android:name=".Activity.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeepNews" />
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".Activity.DeepNews"
+            android:parentActivityName=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>

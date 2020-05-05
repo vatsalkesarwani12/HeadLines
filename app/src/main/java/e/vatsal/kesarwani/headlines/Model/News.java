@@ -1,7 +1,6 @@
-package e.vatsal.kesarwani.headlines;
+package e.vatsal.kesarwani.headlines.Model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class News {
 

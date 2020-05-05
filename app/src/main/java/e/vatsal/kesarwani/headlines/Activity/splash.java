@@ -1,13 +1,14 @@
-package e.vatsal.kesarwani.headlines;
+package e.vatsal.kesarwani.headlines.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+
+import e.vatsal.kesarwani.headlines.R;
 
 public class splash extends AppCompatActivity {
 

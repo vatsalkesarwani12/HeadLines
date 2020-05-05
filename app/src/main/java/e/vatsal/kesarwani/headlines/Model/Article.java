@@ -1,4 +1,4 @@
-package e.vatsal.kesarwani.headlines;
+package e.vatsal.kesarwani.headlines.Model;
 
 
 public class Article {
@@ -77,13 +77,4 @@ public class Article {
         this.content = content;
     }
 
-
-    /*@Override
-    public String toString() {
-        return "articles{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }*/
 }

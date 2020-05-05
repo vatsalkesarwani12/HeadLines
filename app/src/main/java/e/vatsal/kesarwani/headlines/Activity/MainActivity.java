@@ -1,4 +1,4 @@
-package e.vatsal.kesarwani.headlines;
+package e.vatsal.kesarwani.headlines.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,24 +7,21 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
-import java.util.*;
 
-import e.vatsal.kesarwani.headlines.RecyclerView.RecycleData;
-import e.vatsal.kesarwani.headlines.RecyclerView.RecyclerAdapter;
+import e.vatsal.kesarwani.headlines.Model.Article;
+import e.vatsal.kesarwani.headlines.Model.News;
+import e.vatsal.kesarwani.headlines.R;
+import e.vatsal.kesarwani.headlines.Model.RecycleData;
+import e.vatsal.kesarwani.headlines.Adapter.RecyclerAdapter;
 import e.vatsal.kesarwani.headlines.api.ApiClient;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -114,7 +111,17 @@ public class MainActivity extends AppCompatActivity {
                         content += "Content: " + art.get(i).getContent() + "\n\n";
 
                        // titletxt.append(content);
-                        mdata.add(new RecycleData(art.get(i).getUrlToImage(),art.get(i).getTitle(),art.get(i).getDescription(),art.get(i).getSource().getName(),art.get(i).getContent(),art.get(i).getUrlToImage()));
+                        mdata.add(new RecycleData(
+                                art.get(i).getUrlToImage(),
+                                art.get(i).getTitle(),
+                                art.get(i).getDescription(),
+                                art.get(i).getSource().getName(),
+                                art.get(i).getContent(),
+                                art.get(i).getUrlToImage(),
+                                art.get(i).getUrl(),
+                                art.get(i).getPublishedAt()
+                                )
+                        );
                     }
                 }
                 catch(Exception e)

@@ -1,9 +1,8 @@
-package e.vatsal.kesarwani.headlines.RecyclerView;
+package e.vatsal.kesarwani.headlines.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,24 +16,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import e.vatsal.kesarwani.headlines.DeepNews;
-import e.vatsal.kesarwani.headlines.MainActivity;
+import e.vatsal.kesarwani.headlines.Activity.DeepNews;
+import e.vatsal.kesarwani.headlines.Model.RecycleData;
 import e.vatsal.kesarwani.headlines.R;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ExampleViewHolder> {
 
     private ArrayList<RecycleData> mRecycleData;
     private Context context;
-    private OnItemClickListner mListner;
-
-    public void setOnItemClickListner(OnItemClickListner listner){
-        mListner = listner;
-    }
-
-    public interface OnItemClickListner{
-        void onItemClick(int position);
-    }
-
 
     public RecyclerAdapter(ArrayList<RecycleData> mRecycleData, Context context) {
         this.mRecycleData = mRecycleData;
@@ -50,8 +39,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.ExampleViewHolder holder, int position) {
-        RecycleData currentdata=mRecycleData.get(position);
+    public void onBindViewHolder(@NonNull final RecyclerAdapter.ExampleViewHolder holder, final int position) {
+        final RecycleData currentdata=mRecycleData.get(position);
 
         holder.titletxt.setText(currentdata.getNewstitle());
         holder.destxt.setText(currentdata.getNewsdescription());
@@ -61,6 +50,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
         Glide.with(context)
                 .load(currentdata.getNewsimage())
                 .into(holder.img);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DeepNews.class);
+                intent.putExtra("title",currentdata.getNewstitle());
+                intent.putExtra("description",currentdata.getNewsdescription());
+                intent.putExtra("content",currentdata.getNewsContent());
+                intent.putExtra("name",currentdata.getNewsname());
+                intent.putExtra("image",currentdata.getNewsimage());
+                intent.putExtra("urlToNews",currentdata.getUrlToNews());
+                intent.putExtra("publishAt",currentdata.getPublishAt());
+
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -91,7 +97,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                     int position = getAdapterPosition();
                     Toast.makeText(context,"Wait...",Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(context, DeepNews.class);
+                    /*Intent intent = new Intent(context, DeepNews.class);
                     intent.putExtra("title",titletxt.getText());
                     intent.putExtra("description",destxt.getText());
                     intent.putExtra("content",content.getText());
@@ -105,7 +111,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                         if (position != RecyclerView.NO_POSITION) {
                             mListner.onItemClick(position);
                         }
-                    }
+                    }*/
                 }
 
             });

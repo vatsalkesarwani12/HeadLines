@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeepNews"
-    android:orientation="vertical">
+    tools:context=".Activity.DeepNews"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
     <include
-        layout="@layout/title"/>
-
-    </LinearLayout>
+        layout="@layout/title"
+        android:id="@+id/head01"/>
 
 
    <com.google.android.material.card.MaterialCardView
-       android:layout_height="match_parent"
+       android:layout_below="@+id/head01"
+       android:layout_above="@+id/bar01"
+       android:layout_height="wrap_content"
        android:layout_width="match_parent"
-       android:layout_margin="10dp"
+       android:layout_marginStart="10dp"
+       android:layout_marginEnd="10dp"
+       android:layout_marginTop="10dp"
        app:cardCornerRadius="15dp"
        android:elevation="4dp"
        android:padding="5dp"
        app:strokeColor="#000"
        app:strokeWidth="1dp"
-       app:cardPreventCornerOverlap="false"
-       >
+       app:cardPreventCornerOverlap="false">
 
        <RelativeLayout
            android:layout_width="match_parent"
@@ -50,11 +50,14 @@
            android:layout_height="match_parent"
            android:layout_margin="5dp"
            android:background="@color/colorAccent"
-           android:alpha="0.25"/>
+           android:alpha="0.25"
+           android:contentDescription="news image" />
+
        <ImageView
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:src="@drawable/round_corner"/>
+           android:src="@drawable/round_corner"
+           android:contentDescription="round corner" />
 
        <ScrollView
            android:layout_width="match_parent"
@@ -136,4 +139,41 @@
 
    </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/bar01"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="2dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_home_black_24dp" />
+
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_star_border_black_24dp" />
+
+        <ImageView
+            android:id="@+id/dislike"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            android:src="@drawable/ic_star_red_24dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
