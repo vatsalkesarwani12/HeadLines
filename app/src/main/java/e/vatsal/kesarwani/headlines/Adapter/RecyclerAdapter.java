@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import e.vatsal.kesarwani.headlines.Activity.DeepNews;
 import e.vatsal.kesarwani.headlines.Model.RecycleData;
 import e.vatsal.kesarwani.headlines.R;
+import e.vatsal.kesarwani.headlines.Repository.Repository;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ExampleViewHolder> {
 
@@ -55,13 +56,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DeepNews.class);
-                intent.putExtra("title",currentdata.getNewstitle());
-                intent.putExtra("description",currentdata.getNewsdescription());
-                intent.putExtra("content",currentdata.getNewsContent());
-                intent.putExtra("name",currentdata.getNewsname());
-                intent.putExtra("image",currentdata.getNewsimage());
-                intent.putExtra("urlToNews",currentdata.getUrlToNews());
-                intent.putExtra("publishAt",currentdata.getPublishAt());
+                intent.putExtra(Repository.TITLE,currentdata.getNewstitle());
+                intent.putExtra(Repository.DESCRIPTION,currentdata.getNewsdescription());
+                intent.putExtra(Repository.CONTENT,currentdata.getNewsContent());
+                intent.putExtra(Repository.NAME,currentdata.getNewsname());
+                intent.putExtra(Repository.URLTOIMAGE,currentdata.getNewsimage());
+                intent.putExtra(Repository.URL,currentdata.getUrlToNews());
+                intent.putExtra(Repository.PUBLISHED,currentdata.getPublishAt());
 
                 holder.itemView.getContext().startActivity(intent);
 

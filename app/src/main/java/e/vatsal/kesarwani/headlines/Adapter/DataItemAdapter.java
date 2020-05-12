@@ -48,8 +48,8 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.Exampl
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Row deleted", Toast.LENGTH_SHORT).show();
-                //DeepNews dn=new DeepNews();
-                //dn.deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{item.getTitle()});
+                DeepNews dn=new DeepNews();
+                dn.deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{item.getTitle()});
             }
         });
     }

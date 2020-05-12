@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private String business="business";
     private CardView buss,enter,health,science,sports,techno;
-    private Button sql;
+    private Button sql,room;
 
 
     @Override
@@ -23,7 +23,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         //TODO ADD DRAWER TO THE ACTIVITY
-        //TODO ADD THE FIREBASE FIRESTORE DATABASE TO STORE THE LIKED NEWS FROM THE USER
 
         initializeViews();
 
@@ -39,6 +38,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         sports.setOnClickListener(this);
         techno.setOnClickListener(this);
         sql.setOnClickListener(this);
+        room.setOnClickListener(this);
     }
 
     private void initializeViews() {
@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         sports=findViewById(R.id.sports);
         techno=findViewById(R.id.techno);
         sql=findViewById(R.id.sql);
+        room=findViewById(R.id.roomButton);
     }
 
     @Override
@@ -89,6 +90,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.sql:
                 startActivity(new Intent(getApplicationContext(),SqlDatabase.class));
+                break;
+
+            case R.id.roomButton:
+                startActivity(new Intent(getApplicationContext(),RoomData.class));
                 break;
         }
     }

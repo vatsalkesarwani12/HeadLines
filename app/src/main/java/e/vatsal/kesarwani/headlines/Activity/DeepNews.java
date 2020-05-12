@@ -20,6 +20,7 @@ import e.vatsal.kesarwani.headlines.Database.DataSource;
 import e.vatsal.kesarwani.headlines.Database.DatabaseItems;
 import e.vatsal.kesarwani.headlines.Database.SQLiteDatabaseHelper;
 import e.vatsal.kesarwani.headlines.R;
+import e.vatsal.kesarwani.headlines.Repository.Repository;
 
 public class DeepNews extends AppCompatActivity {
 
@@ -93,21 +94,21 @@ public class DeepNews extends AppCompatActivity {
         dislike.setVisibility(View.GONE);
         Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
         //TODO remove error
-        //deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});
+        deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});
     }
 
-//    public void deleteRow(String table_name,String column_name,String[] args){
-//        int a=db.delete(table_name,column_name,args);
-//    }
+    public void deleteRow(String table_name,String column_name,String[] args){
+        int a=db.delete(table_name,column_name+"=",args);
+    }
 
 
     private void loadViews() {
         intent = getIntent();
-        mtitle.setText(intent.getStringExtra("title"));
-        mdescription.setText(intent.getStringExtra("description"));
-        mcontent.setText(intent.getStringExtra("content"));
-        name.setText(intent.getStringExtra("name"));
-        img= intent.getStringExtra("image");
+        mtitle.setText(intent.getStringExtra(Repository.TITLE));
+        mdescription.setText(intent.getStringExtra(Repository.DESCRIPTION));
+        mcontent.setText(intent.getStringExtra(Repository.CONTENT));
+        name.setText(intent.getStringExtra(Repository.NAME));
+        img= intent.getStringExtra(Repository.URLTOIMAGE);
         Glide.with(this)
                 .load(img)
                 .into(imgRes);
