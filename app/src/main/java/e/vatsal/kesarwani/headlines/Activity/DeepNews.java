@@ -20,6 +20,7 @@ import e.vatsal.kesarwani.headlines.Database.DataSource;
 import e.vatsal.kesarwani.headlines.Database.DatabaseItems;
 import e.vatsal.kesarwani.headlines.Database.SQLiteDatabaseHelper;
 import e.vatsal.kesarwani.headlines.R;
+import e.vatsal.kesarwani.headlines.Repository.Repository;
 
 public class DeepNews extends AppCompatActivity {
 
@@ -103,11 +104,11 @@ public class DeepNews extends AppCompatActivity {
 
     private void loadViews() {
         intent = getIntent();
-        mtitle.setText(intent.getStringExtra("title"));
-        mdescription.setText(intent.getStringExtra("description"));
-        mcontent.setText(intent.getStringExtra("content"));
-        name.setText(intent.getStringExtra("name"));
-        img= intent.getStringExtra("image");
+        mtitle.setText(intent.getStringExtra(Repository.TITLE));
+        mdescription.setText(intent.getStringExtra(Repository.DESCRIPTION));
+        mcontent.setText(intent.getStringExtra(Repository.CONTENT));
+        name.setText(intent.getStringExtra(Repository.NAME));
+        img= intent.getStringExtra(Repository.URLTOIMAGE);
         Glide.with(this)
                 .load(img)
                 .into(imgRes);

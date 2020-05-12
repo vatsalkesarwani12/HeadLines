@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".Activity.SqlDatabase"></activity>
+        <activity android:name=".Activity.RoomData"></activity>
+        <activity android:name=".Activity.SqlDatabase" />
         <activity
             android:name=".Activity.HomeActivity"
             android:theme="@style/MaterialTheme" />
@@ -24,7 +25,7 @@
         </activity>
         <activity
             android:name=".Activity.DeepNews"
-            android:parentActivityName=".Activity.MainActivity"></activity>
+            android:parentActivityName=".Activity.MainActivity" />
         <activity android:name=".Activity.MainActivity" />
     </application>
 

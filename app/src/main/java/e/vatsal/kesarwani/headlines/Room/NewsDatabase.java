@@ -9,7 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {NewsEntity.class},version = 1)
+@Database(entities = {NewsEntity.class},version = 1,exportSchema = false)
 public abstract class NewsDatabase extends RoomDatabase {
 
     private static NewsDatabase instance;
@@ -20,6 +20,7 @@ public abstract class NewsDatabase extends RoomDatabase {
         if (instance == null){
             instance= Room.databaseBuilder(context.getApplicationContext(),NewsDatabase.class,"news_local_database")
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .addCallback(roomCallback)
                     .build();
         }

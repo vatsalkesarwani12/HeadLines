@@ -35,9 +35,8 @@
 
         </LinearLayout>
 
-
-
     </androidx.appcompat.widget.Toolbar>-->
+
     <include
         layout="@layout/title001"/>
 

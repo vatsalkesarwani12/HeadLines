@@ -292,6 +292,14 @@
             android:layout_marginBottom="20dp"
             android:text="Database"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/roomButton"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="Room Database"/>
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
