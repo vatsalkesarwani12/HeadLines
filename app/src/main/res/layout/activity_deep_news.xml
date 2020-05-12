@@ -1,159 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DeepNews"
     android:orientation="vertical"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    tools:context=".Activity.DeepNews">
 
-    <include
-        layout="@layout/title"
-        android:id="@+id/head01"/>
+    <!--<include
+        android:id="@+id/head01"
+        layout="@layout/title" />-->
 
 
-   <com.google.android.material.card.MaterialCardView
-       android:layout_below="@+id/head01"
-       android:layout_above="@+id/bar01"
-       android:layout_height="wrap_content"
-       android:layout_width="match_parent"
-       android:layout_marginStart="10dp"
-       android:layout_marginEnd="10dp"
-       android:layout_marginTop="10dp"
-       app:cardCornerRadius="15dp"
-       android:elevation="4dp"
-       android:padding="5dp"
-       app:strokeColor="#000"
-       app:strokeWidth="1dp"
-       app:cardPreventCornerOverlap="false">
+    <!--<com.google.android.material.card.MaterialCardView
+        android:layout_below="@+id/head01"
+        android:layout_above="@+id/bar01"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="4dp"
+        android:padding="5dp"
+        app:cardPreventCornerOverlap="false">-->
 
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bar01">
+        <!--android:layout_below="@+id/head01"-->
 
-       <FrameLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:padding="5dp">
-           <ImageView
-               android:id="@+id/newsImage"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/image"
-               android:scaleType="fitXY"
-               />
-       </FrameLayout>
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_margin="5dp"
-           android:background="@color/colorAccent"
-           android:alpha="0.25"
-           android:contentDescription="news image" />
+        <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="254dp"
+            android:padding="5dp">-->
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/round_corner"
-           android:contentDescription="round corner" />
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="match_parent"
+                android:layout_height="254dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image" />
 
-       <ScrollView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_marginTop="15dp"
-           android:layout_marginLeft="15dp"
-           android:layout_marginRight="15dp"
-           android:layout_marginBottom="50dp"
-           android:id="@+id/news_scroll_view">
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:orientation="vertical">
+       <!-- </FrameLayout>-->
 
-               <TextView
-                   android:id="@+id/news_title"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:textColor="#fff"
-                   android:fontFamily="@font/roboto_black"
-                   android:textStyle="bold"
-                   android:text="Title"
-                   android:textSize="20dp"
-                   android:layout_weight="1"
-                   />
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:alpha="0.25"
+            android:background="@color/colorAccent"
+            android:contentDescription="news image" />-->
 
-               <TextView
-                   android:id="@+id/news_description"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_alignParentBottom="true"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginBottom="15dp"
-                   android:layout_weight="1"
-                   android:fontFamily="@font/roboto_regular"
-                   android:text="Description"
-                   android:textColor="#fff"
-                   android:textSize="18dp" />
+        <ImageView
+            android:id="@+id/image00"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:contentDescription="round corner"
+            android:src="@drawable/round_corner" />
 
-               <TextView
-                   android:id="@+id/news_content"
-                   android:layout_marginTop="15dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:textColor="#fff"
-                   android:fontFamily="@font/roboto_light"
-                   android:text="Content"
-                   android:textSize="18dp"
-                   android:layout_weight="1"
-                   />
+        <ScrollView
+            android:layout_below="@+id/image00"
+            android:id="@+id/news_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp">
 
-           </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-       </ScrollView>
+                <TextView
+                    android:id="@+id/news_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_black"
+                    android:text="Title"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-           <TextView
-               android:id="@+id/news_name"
-               android:layout_marginTop="15dp"
-               android:layout_marginBottom="15dp"
-               android:layout_marginLeft="20dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_alignParentBottom="true"
-               android:layout_alignParentEnd="true"
-               android:textColor="#fff"
-               android:layout_marginEnd="15dp"
-               android:fontFamily="@font/roboto_regular"
-               android:text="Name"
-               android:paddingTop="1dp"
-               android:paddingBottom="1dp"
-               android:paddingLeft="3dp"
-               android:paddingRight="3dp"
-               android:background="@color/colorAccent"
-               android:textSize="14dp"
-               android:layout_weight="1"
-               />
+                <TextView
+                    android:id="@+id/news_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Description"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
 
-       </RelativeLayout>
+                <TextView
+                    android:id="@+id/news_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Content"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
 
-   </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/news_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingLeft="3dp"
+            android:paddingTop="1dp"
+            android:paddingRight="3dp"
+            android:paddingBottom="1dp"
+            android:text="Name"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+    <!--</com.google.android.material.card.MaterialCardView>-->
 
     <RelativeLayout
         android:id="@+id/bar01"
         android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
         android:layout_margin="2dp"
         android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:layout_alignParentBottom="true">
+        android:paddingRight="12dp">
 
         <ImageView
             android:id="@+id/home"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_gravity="start"
             android:layout_alignParentLeft="true"
+            android:layout_gravity="start"
             android:src="@drawable/ic_home_black_24dp" />
 
 
@@ -161,18 +161,18 @@
             android:id="@+id/like"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_gravity="end"
             android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
             android:src="@drawable/ic_star_border_black_24dp" />
 
         <ImageView
             android:id="@+id/dislike"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_gravity="end"
             android:layout_alignParentEnd="true"
-            android:visibility="gone"
-            android:src="@drawable/ic_star_red_24dp" />
+            android:layout_gravity="end"
+            android:src="@drawable/ic_star_red_24dp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 

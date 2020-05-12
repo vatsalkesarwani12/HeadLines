@@ -93,12 +93,12 @@ public class DeepNews extends AppCompatActivity {
         dislike.setVisibility(View.GONE);
         Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
         //TODO remove error
-        //deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});
+        deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});
     }
 
-//    public void deleteRow(String table_name,String column_name,String[] args){
-//        int a=db.delete(table_name,column_name,args);
-//    }
+    public void deleteRow(String table_name,String column_name,String[] args){
+        int a=db.delete(table_name,column_name+"=",args);
+    }
 
 
     private void loadViews() {

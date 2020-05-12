@@ -1,8 +1,12 @@
 package e.vatsal.kesarwani.headlines.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
@@ -21,6 +25,7 @@ import e.vatsal.kesarwani.headlines.Model.News;
 import e.vatsal.kesarwani.headlines.R;
 import e.vatsal.kesarwani.headlines.Model.RecycleData;
 import e.vatsal.kesarwani.headlines.Adapter.RecyclerAdapter;
+import e.vatsal.kesarwani.headlines.Repository.Repository;
 import e.vatsal.kesarwani.headlines.api.ApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
     public ApiClient api;
 
     private TextView text;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         content += "Published At: " + art.get(i).getPublishedAt() + "\n";
                         content += "Content: " + art.get(i).getContent() + "\n\n";
 
+
                        // titletxt.append(content);
                         mdata.add(new RecycleData(
                                 art.get(i).getUrlToImage(),
@@ -122,6 +131,19 @@ public class MainActivity extends AppCompatActivity {
                                 art.get(i).getPublishedAt()
                                 )
                         );
+
+                        Intent data = new Intent();
+                        data.putExtra(Repository.TITLE, art.get(i).getTitle());
+                        data.putExtra(Repository.NAME, art.get(i).getSource().getName());
+                        data.putExtra(Repository.AUTHOR, art.get(i).getAuthor());
+                        data.putExtra(Repository.URL, art.get(i).getUrl());
+                        data.putExtra(Repository.DESCRIPTION, art.get(i).getDescription());
+                        data.putExtra(Repository.URLTOIMAGE, art.get(i).getUrlToImage());
+                        data.putExtra(Repository.PUBLISHED, art.get(i).getPublishedAt());
+                        data.putExtra(Repository.CONTENT, art.get(i).getContent());
+
+                        setResult(RESULT_OK, data);
+
                     }
                 }
                 catch(Exception e)
