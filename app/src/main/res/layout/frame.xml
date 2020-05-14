@@ -3,28 +3,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp">
+    android:layout_marginBottom="4dp"
+    android:background="#f8f8f8">
 
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="225dp"
     android:layout_margin="1dp"
-    android:background="@drawable/border"
-    android:layout_marginTop="2dp">
+    android:background="@drawable/border">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="225dp"
         android:layout_margin="2dp"
-        android:padding="4dp"
-        >
+        android:padding="4dp">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/image" />
+            android:src="@drawable/image"
+            android:layout_margin="1dp"/>
 
         <TextView
             android:id="@+id/title"
@@ -33,7 +33,9 @@
             android:fontFamily="@font/roboto_black"
             android:padding="4dp"
             android:text="title"
-            android:textColor="@android:color/white"
+            android:layout_margin="1dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -45,17 +47,21 @@
             android:padding="4dp"
             android:text="description"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:padding="4dp"
             android:text="name"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:background="@android:color/white"
+            android:layout_alignParentRight="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_margin="1dp"/>
 
     </RelativeLayout>
 

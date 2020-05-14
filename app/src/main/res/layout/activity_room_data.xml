@@ -5,7 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.RoomData">
+    tools:context=".Activity.RoomData"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_margin="1dp">
 
     <include
         android:id="@+id/include"
@@ -15,19 +18,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/roomRecycle"
-        android:layout_width="409dp"
-        android:layout_height="567dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/include"
-        tools:listitem="@layout/room001"
+        tools:listitem="@layout/frame"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-    <Button
-        android:id="@+id/roomDeleteAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="delete all"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="15dp" />
+    <!--<Button
+    android:id="@+id/roomDeleteAll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="delete all"
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="15dp" />-->
 
 </RelativeLayout>

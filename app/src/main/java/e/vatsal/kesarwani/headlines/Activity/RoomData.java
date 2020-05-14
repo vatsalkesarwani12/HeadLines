@@ -20,17 +20,19 @@ public class RoomData extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RoomRecyclerAdapter recyclerAdapter;
-    private Button delete;
+    //private Button delete;
+    private Repository repository;
+    private NewsEntity newsEntity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_data);
-        delete=findViewById(R.id.roomDeleteAll);
+        //delete=findViewById(R.id.roomDeleteAll);
 
-        final NewsEntity newsEntity=new NewsEntity(null,null,null,null,null,null,null,null);
+        newsEntity=new NewsEntity(null,null,null,null,null,null,null,null);
 
-        final Repository repository=new Repository(getApplication());
+        repository = new Repository(getApplication());
         List<NewsEntity> newss=repository.getAllNews();
 
         recyclerView=findViewById(R.id.roomRecycle);
@@ -39,13 +41,19 @@ public class RoomData extends AppCompatActivity {
 
         recyclerView.setAdapter(recyclerAdapter);
 
-        delete.setOnClickListener(new View.OnClickListener() {
+        /*delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 repository.deleteAll(newsEntity);
                 Toast.makeText(RoomData.this, "All news deleted", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        repository.deleteAll(newsEntity);
     }
 }

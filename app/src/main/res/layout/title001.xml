@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="-25dp"
+        android:layout_marginTop="-23dp"
         android:alpha="0.6"
         android:background="@drawable/ic_rectangle_14" />
 
