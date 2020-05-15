@@ -1,3 +1,4 @@
+/*
 package e.vatsal.kesarwani.headlines.Database;
 
 public class DatabaseItems {
@@ -27,3 +28,4 @@ public class DatabaseItems {
     public static final String SQL_DELETE =
             "DROP TABLE " + TABLE_ITEMS;
 }
+*/

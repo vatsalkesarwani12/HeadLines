@@ -11,16 +11,17 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
-import e.vatsal.kesarwani.headlines.Database.DataSource;
-import e.vatsal.kesarwani.headlines.Database.DatabaseItems;
-import e.vatsal.kesarwani.headlines.Database.SQLiteDatabaseHelper;
+import java.util.List;
+
 import e.vatsal.kesarwani.headlines.R;
 import e.vatsal.kesarwani.headlines.Repository.Repository;
+import e.vatsal.kesarwani.headlines.Room.NewsEntity;
 
 public class DeepNews extends AppCompatActivity {
 
@@ -29,9 +30,15 @@ public class DeepNews extends AppCompatActivity {
     private ImageView imgRes,home,like,dislike ;
     private String img;
     private TextView name;
-    private DataSource mDataSource;
+   /* private DataSource mDataSource;
     private SQLiteDatabase db;
-    private SQLiteDatabaseHelper mDbHelper;
+    private SQLiteDatabaseHelper mDbHelper;*/
+    //database
+    private Repository repository;
+    private List<NewsEntity> newss;
+    private NewsEntity newsEntity;
+    private int a=-1;
+    private RelativeLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,9 @@ public class DeepNews extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (a==1){
+                    save();
+                }
                 startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             }
         });
@@ -51,33 +61,52 @@ public class DeepNews extends AppCompatActivity {
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+                a=1;
+                like.setVisibility(View.GONE);
+                dislike.setVisibility(View.VISIBLE);
+                Toast.makeText(DeepNews.this, "Saved", Toast.LENGTH_SHORT).show();
             }
         });
 
         dislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                del();
+                a=0;
+                like.setVisibility(View.VISIBLE);
+                dislike.setVisibility(View.GONE);
+                Toast.makeText(DeepNews.this, "Delete", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void save() {
-        like.setVisibility(View.GONE);
+        /*like.setVisibility(View.GONE);
         dislike.setVisibility(View.VISIBLE);
-        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-        mDataSource = new DataSource(this);
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();*/
+        /*mDataSource = new DataSource(this);
         mDataSource.open();
 
         try {
             mDataSource.createItem();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+
+         newsEntity = new NewsEntity(
+                intent.getStringExtra(Repository.NAME),
+                intent.getStringExtra(Repository.AUTHOR),
+                intent.getStringExtra(Repository.TITLE),
+                intent.getStringExtra(Repository.DESCRIPTION),
+                intent.getStringExtra(Repository.URL),
+                intent.getStringExtra(Repository.URLTOIMAGE),
+                intent.getStringExtra(Repository.PUBLISHED),
+                intent.getStringExtra(Repository.CONTENT));
+
+        repository.insert(newsEntity);
+
     }
 
-    public static ContentValues toValues() {
+    /*public static ContentValues toValues() {
         ContentValues values = new ContentValues(7);
         values.put(DatabaseItems.COLUMN_NAME, intent.getStringExtra("name"));
         values.put(DatabaseItems.COLUMN_DESCRIPTION, intent.getStringExtra("description"));
@@ -87,23 +116,36 @@ public class DeepNews extends AppCompatActivity {
         values.put(DatabaseItems.COLUMN_URL_TO_IMAGE, intent.getStringExtra("image"));
         values.put(DatabaseItems.COLUMN_PUBLISHED_AT,intent.getStringExtra("publishAt"));
         return values;
-    }
+    }*/
 
-    private void del(){
+   /* private void del(){
         like.setVisibility(View.VISIBLE);
         dislike.setVisibility(View.GONE);
         Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
-        //TODO remove error
-        deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});
-    }
+        *//*
+        deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{intent.getStringExtra("title")});*//*
+        *//*newsEntity = new NewsEntity(
+                intent.getStringExtra(Repository.NAME),
+                intent.getStringExtra(Repository.AUTHOR),
+                intent.getStringExtra(Repository.TITLE),
+                intent.getStringExtra(Repository.DESCRIPTION),
+                intent.getStringExtra(Repository.URL),
+                intent.getStringExtra(Repository.URLTOIMAGE),
+                intent.getStringExtra(Repository.PUBLISHED),
+                intent.getStringExtra(Repository.CONTENT));*//*
 
-    public void deleteRow(String table_name,String column_name,String[] args){
+        //repository.delete(newsEntity);
+    }*/
+
+    /*public void deleteRow(String table_name,String column_name,String[] args){
         int a=db.delete(table_name,column_name+"=",args);
-    }
+    }*/
 
 
     private void loadViews() {
         intent = getIntent();
+        /*String s= intent.getStringExtra("Context");
+        Toast.makeText(this, " "+intent.getStringExtra("Context"), Toast.LENGTH_SHORT).show();*/
         mtitle.setText(intent.getStringExtra(Repository.TITLE));
         mdescription.setText(intent.getStringExtra(Repository.DESCRIPTION));
         mcontent.setText(intent.getStringExtra(Repository.CONTENT));
@@ -123,7 +165,16 @@ public class DeepNews extends AppCompatActivity {
         home=findViewById(R.id.home);
         like=findViewById(R.id.like);
         dislike=findViewById(R.id.dislike);
-        mDbHelper = new SQLiteDatabaseHelper(this);
-        db = mDbHelper.getReadableDatabase();
+        /*mDbHelper = new SQLiteDatabaseHelper(this);
+        db = mDbHelper.getReadableDatabase();*/
+        repository = new Repository(getApplication());
+        layout=findViewById(R.id.bar01);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (a==1)
+            save();
     }
 }

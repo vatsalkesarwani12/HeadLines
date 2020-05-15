@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class RoomData extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RoomRecyclerAdapter recyclerAdapter;
-    //private Button delete;
+    //private ImageView delete;
     private Repository repository;
     private NewsEntity newsEntity;
 
@@ -28,7 +29,8 @@ public class RoomData extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_data);
-        //delete=findViewById(R.id.roomDeleteAll);
+        /*delete=findViewById(R.id.deleteSavedNews);
+        delete.setVisibility(View.VISIBLE);*/
 
         newsEntity=new NewsEntity(null,null,null,null,null,null,null,null);
 
@@ -44,7 +46,7 @@ public class RoomData extends AppCompatActivity {
         /*delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                repository.deleteAll(newsEntity);
+                repository.delete(newsEntity);
                 Toast.makeText(RoomData.this, "All news deleted", Toast.LENGTH_SHORT).show();
             }
         });*/
@@ -54,6 +56,6 @@ public class RoomData extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        repository.deleteAll(newsEntity);
+        //repository.deleteAll(newsEntity);
     }
 }

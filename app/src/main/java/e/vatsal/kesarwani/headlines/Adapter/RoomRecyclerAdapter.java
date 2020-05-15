@@ -52,20 +52,21 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 .load(news.get(position).getUrlToImage())
                 .into(holder.image);
 
-        /*holder.delete.setOnClickListener(new View.OnClickListener() {
+        holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Repository repository=new Repository(application);
                 repository.delete(news.get(position));
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
             }
-        });*/
+        });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, DeepNews.class);
+                /*intent.putExtra("Context","1");*/
                 intent.putExtra(Repository.TITLE,news.get(position).getTitle());
                 intent.putExtra(Repository.DESCRIPTION,news.get(position).getDescription());
                 intent.putExtra(Repository.CONTENT,news.get(position).getContent());
@@ -86,12 +87,14 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title,name;
-        ImageView image;
+        ImageView image,delete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title);
             name=itemView.findViewById(R.id.name);
             image=itemView.findViewById(R.id.image);
+            delete=itemView.findViewById(R.id.deleteSavedNews);
+            delete.setVisibility(View.VISIBLE);
         }
     }
 }
