@@ -1,3 +1,4 @@
+/*
 package e.vatsal.kesarwani.headlines.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +9,12 @@ import android.os.Bundle;
 import java.util.List;
 
 import e.vatsal.kesarwani.headlines.Adapter.DataItemAdapter;
-import e.vatsal.kesarwani.headlines.Database.DataSource;
 import e.vatsal.kesarwani.headlines.Model.DataItem;
 import e.vatsal.kesarwani.headlines.R;
 
 public class SqlDatabase extends AppCompatActivity {
 
-    DataSource mDataSource;
+    //DataSource mDataSource;
     List<DataItem> listFromDB;
     RecyclerView mRecyclerView;
     DataItemAdapter mItemAdapter;
@@ -41,3 +41,4 @@ public class SqlDatabase extends AppCompatActivity {
     }
 
 }
+*/

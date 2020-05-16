@@ -15,10 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
-
-import e.vatsal.kesarwani.headlines.Activity.DeepNews;
-import e.vatsal.kesarwani.headlines.Database.DatabaseItems;
 import e.vatsal.kesarwani.headlines.Model.DataItem;
 import e.vatsal.kesarwani.headlines.R;
 
@@ -48,8 +44,8 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.Exampl
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Row deleted", Toast.LENGTH_SHORT).show();
-                DeepNews dn=new DeepNews();
-                dn.deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{item.getTitle()});
+                //DeepNews dn=new DeepNews();
+                /*dn.deleteRow(DatabaseItems.TABLE_ITEMS,DatabaseItems.COLUMN_TITLE,new String[]{item.getTitle()});*/
             }
         });
     }

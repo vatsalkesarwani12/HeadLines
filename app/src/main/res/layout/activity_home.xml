@@ -284,13 +284,13 @@
             android:layout_width="0dp"
             android:layout_height="25dp"/>
 
-        <Button
+        <!--<Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sql"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:text="Database"/>
+            android:text="Database"/>-->
 
         <Button
             android:layout_width="wrap_content"

@@ -21,13 +21,11 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import e.vatsal.kesarwani.headlines.Adapter.RecyclerAdapter;
 import e.vatsal.kesarwani.headlines.Model.Article;
 import e.vatsal.kesarwani.headlines.Model.News;
 import e.vatsal.kesarwani.headlines.R;
 import e.vatsal.kesarwani.headlines.Model.RecycleData;
-import e.vatsal.kesarwani.headlines.Adapter.RecyclerAdapter;
-import e.vatsal.kesarwani.headlines.Repository.Repository;
-import e.vatsal.kesarwani.headlines.Room.NewsEntity;
 import e.vatsal.kesarwani.headlines.api.ApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
     public ApiClient api;
 
     private TextView text;
-    //database
+    /*//database
     private Repository repository;
-    private List<NewsEntity> newss;
+    private List<NewsEntity> newss;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         intent = getIntent();
         category = intent.getStringExtra("news");
 
-        repository = new Repository(getApplication());
+        /*repository = new Repository(getApplication());*/
 
 
        /*HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
@@ -135,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                                 )
                         );
 
-                        NewsEntity newsEntity = new NewsEntity(art.get(i).getSource().getName(),
+                        /*NewsEntity newsEntity = new NewsEntity(art.get(i).getSource().getName(),
                                 art.get(i).getAuthor(),
                                 art.get(i).getTitle(),
                                 art.get(i).getDescription(),
@@ -144,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                                 art.get(i).getPublishedAt(),
                                 art.get(i).getContent());
 
-                        repository.insert(newsEntity);
+                        repository.insert(newsEntity);*/
 
                     }
                 }
