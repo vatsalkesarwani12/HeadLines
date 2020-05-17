@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private String business="business";
     private CardView buss,enter,health,science,sports,techno;
-    private Button sql,room;
+    private Button room;
 
 
     @Override
@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         science.setOnClickListener(this);
         sports.setOnClickListener(this);
         techno.setOnClickListener(this);
-        sql.setOnClickListener(this);
+        /*sql.setOnClickListener(this);*/
         room.setOnClickListener(this);
     }
 
@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         science=findViewById(R.id.science);
         sports=findViewById(R.id.sports);
         techno=findViewById(R.id.techno);
-        sql=findViewById(R.id.sql);
+        /*sql=findViewById(R.id.sql);*/
         room=findViewById(R.id.roomButton);
     }
 
@@ -88,9 +88,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            case R.id.sql:
-                startActivity(new Intent(getApplicationContext(),SqlDatabase.class));
-                break;
+            /*case R.id.sql:
+                //startActivity(new Intent(getApplicationContext(),SqlDatabase.class));
+                break;*/
 
             case R.id.roomButton:
                 startActivity(new Intent(getApplicationContext(),RoomData.class));

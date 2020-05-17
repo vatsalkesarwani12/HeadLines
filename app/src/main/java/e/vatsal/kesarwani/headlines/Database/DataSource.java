@@ -1,3 +1,4 @@
+/*
 package e.vatsal.kesarwani.headlines.Database;
 
 import android.content.ContentValues;
@@ -71,3 +72,4 @@ public class DataSource {
     }
 
 }
+*/

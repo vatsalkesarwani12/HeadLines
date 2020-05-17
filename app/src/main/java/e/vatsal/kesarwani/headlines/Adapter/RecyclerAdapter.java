@@ -2,6 +2,7 @@ package e.vatsal.kesarwani.headlines.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,21 +99,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                     int position = getAdapterPosition();
                     Toast.makeText(context,"Wait...",Toast.LENGTH_SHORT).show();
 
-                    /*Intent intent = new Intent(context, DeepNews.class);
+                    Intent intent = new Intent(context, DeepNews.class);
                     intent.putExtra("title",titletxt.getText());
                     intent.putExtra("description",destxt.getText());
                     intent.putExtra("content",content.getText());
                     intent.putExtra("name",nametxt.getText());
                     intent.putExtra("image",imgg.getText());
+                    /*intent.putExtra("Context","2");*/
 
                     view.getContext().startActivity(intent);
 
-                    if (mListner != null) {
+                    /*if (mListner != null) {
 
                         if (position != RecyclerView.NO_POSITION) {
                             mListner.onItemClick(position);
                         }
                     }*/
+
                 }
 
             });

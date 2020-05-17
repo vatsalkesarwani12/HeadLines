@@ -3,6 +3,7 @@ package e.vatsal.kesarwani.headlines.Adapter;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -36,14 +39,18 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.room001,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.frame,parent,false);
         ViewHolder vh=new ViewHolder(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        holder.textView.setText(news.get(position).getTitle());
+        holder.title.setText(news.get(position).getTitle());
+        holder.name.setText(news.get(position).getName());
+        Glide.with(context)
+                .load(news.get(position).getUrlToImage())
+                .into(holder.image);
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,14 +58,15 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 Repository repository=new Repository(application);
                 repository.delete(news.get(position));
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
             }
         });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, DeepNews.class);
+                /*intent.putExtra("Context","1");*/
                 intent.putExtra(Repository.TITLE,news.get(position).getTitle());
                 intent.putExtra(Repository.DESCRIPTION,news.get(position).getDescription());
                 intent.putExtra(Repository.CONTENT,news.get(position).getContent());
@@ -78,12 +86,15 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
-        ImageView delete;
+        TextView title,name;
+        ImageView image,delete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView=itemView.findViewById(R.id.roomtitile);
-            delete=itemView.findViewById(R.id.deleteRoomList);
+            title=itemView.findViewById(R.id.title);
+            name=itemView.findViewById(R.id.name);
+            image=itemView.findViewById(R.id.image);
+            delete=itemView.findViewById(R.id.deleteSavedNews);
+            delete.setVisibility(View.VISIBLE);
         }
     }
 }

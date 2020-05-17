@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "news_fetched")
 public class NewsEntity {
-    @PrimaryKey(autoGenerate = true)
+
+    @PrimaryKey(autoGenerate = true)     //always for 1 column
     private int id;
     private String name ;
     private String author;
