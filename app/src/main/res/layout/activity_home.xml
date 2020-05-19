@@ -18,7 +18,7 @@
         android:orientation="vertical">-->
 
         <include
-            layout="@layout/title"/>
+            layout="@layout/title" />
 
 
     <!--</LinearLayout>-->
