@@ -56,4 +56,14 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bookmarks"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:id="@+id/bookmarks"/>
+
 </RelativeLayout>

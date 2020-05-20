@@ -35,7 +35,7 @@ public class splash extends AppCompatActivity {
         final boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
 
-        Toast.makeText(context, ""+isConnected, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, ""+isConnected, Toast.LENGTH_SHORT).show();
 
         progressBar=(ProgressBar)findViewById(R.id.pp);
         Thread thread = new Thread(){
@@ -71,7 +71,7 @@ public class splash extends AppCompatActivity {
                     }
                     else
                     {
-                        Intent intent = new Intent(splash.this, HomeActivity.class);
+                        Intent intent = new Intent(splash.this, RoomData.class);
                         startActivity(intent);
                     }
                 }

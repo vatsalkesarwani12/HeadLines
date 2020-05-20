@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         intent = getIntent();
         category = intent.getStringExtra("news");
+        //Toast.makeText(context, ""+category, Toast.LENGTH_SHORT).show();
 
         /*repository = new Repository(getApplication());*/
 
@@ -171,4 +173,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+    }
 }
