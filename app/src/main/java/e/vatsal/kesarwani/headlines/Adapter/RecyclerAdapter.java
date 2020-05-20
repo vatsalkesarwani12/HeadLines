@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import e.vatsal.kesarwani.headlines.Activity.DeepNews;
+import e.vatsal.kesarwani.headlines.Activity.MainActivity;
 import e.vatsal.kesarwani.headlines.Model.RecycleData;
 import e.vatsal.kesarwani.headlines.R;
 import e.vatsal.kesarwani.headlines.Repository.Repository;
@@ -100,12 +101,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                     Toast.makeText(context,"Wait...",Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(context, DeepNews.class);
-                    intent.putExtra("title",titletxt.getText());
-                    intent.putExtra("description",destxt.getText());
-                    intent.putExtra("content",content.getText());
-                    intent.putExtra("name",nametxt.getText());
-                    intent.putExtra("image",imgg.getText());
-                    /*intent.putExtra("Context","2");*/
+                    intent.putExtra(Repository.TITLE,titletxt.getText());
+                    intent.putExtra(Repository.DESCRIPTION,destxt.getText());
+                    intent.putExtra(Repository.CONTENT,content.getText());
+                    intent.putExtra(Repository.NAME,nametxt.getText());
+                    intent.putExtra(Repository.URLTOIMAGE,imgg.getText());
+
 
                     view.getContext().startActivity(intent);
 

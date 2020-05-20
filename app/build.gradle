@@ -52,5 +52,6 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.2.0"
     // Testing
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    implementation 'com.android.support:design:28.0.0'
 
 }

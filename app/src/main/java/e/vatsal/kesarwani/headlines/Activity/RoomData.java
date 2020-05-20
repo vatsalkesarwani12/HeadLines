@@ -3,7 +3,10 @@ package e.vatsal.kesarwani.headlines.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +27,8 @@ public class RoomData extends AppCompatActivity {
     //private ImageView delete;
     private Repository repository;
     private NewsEntity newsEntity;
+    private Context context=this;
+    private boolean isConnected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,12 @@ public class RoomData extends AppCompatActivity {
         setContentView(R.layout.activity_room_data);
         /*delete=findViewById(R.id.deleteSavedNews);
         delete.setVisibility(View.VISIBLE);*/
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        final NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
 
         newsEntity=new NewsEntity(null,null,null,null,null,null,null,null);
 
@@ -56,6 +67,9 @@ public class RoomData extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //repository.deleteAll(newsEntity);
+        if (!isConnected){
+            finishAffinity();
+            finish();
+        }
     }
 }

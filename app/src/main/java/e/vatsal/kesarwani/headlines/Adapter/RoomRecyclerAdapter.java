@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import e.vatsal.kesarwani.headlines.Activity.DeepNews;
+import e.vatsal.kesarwani.headlines.Activity.RoomData;
 import e.vatsal.kesarwani.headlines.R;
 import e.vatsal.kesarwani.headlines.Repository.Repository;
 import e.vatsal.kesarwani.headlines.Room.NewsEntity;
@@ -66,7 +67,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, DeepNews.class);
-                /*intent.putExtra("Context","1");*/
+
                 intent.putExtra(Repository.TITLE,news.get(position).getTitle());
                 intent.putExtra(Repository.DESCRIPTION,news.get(position).getDescription());
                 intent.putExtra(Repository.CONTENT,news.get(position).getContent());
