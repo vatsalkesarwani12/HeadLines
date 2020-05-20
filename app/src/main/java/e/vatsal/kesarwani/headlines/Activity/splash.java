@@ -2,11 +2,15 @@ package e.vatsal.kesarwani.headlines.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import e.vatsal.kesarwani.headlines.R;
 
@@ -14,12 +18,24 @@ public class splash extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
+    private Context context=this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+
+        assert cm != null;
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        final boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        Toast.makeText(context, ""+isConnected, Toast.LENGTH_SHORT).show();
 
         progressBar=(ProgressBar)findViewById(R.id.pp);
         Thread thread = new Thread(){
@@ -49,8 +65,15 @@ public class splash extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent = new Intent(splash.this, HomeActivity.class);
-                    startActivity(intent);
+                    if (isConnected) {
+                        Intent intent = new Intent(splash.this, HomeActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(splash.this, HomeActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         };
