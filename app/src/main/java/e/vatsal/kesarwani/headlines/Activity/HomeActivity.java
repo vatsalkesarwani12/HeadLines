@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         sports=findViewById(R.id.sports);
         techno=findViewById(R.id.techno);
         /*sql=findViewById(R.id.sql);*/
-        room=findViewById(R.id.bookmarks);
+        //room=findViewById(R.id.bookmarks);
         room.setVisibility(View.VISIBLE);
     }
 
@@ -92,9 +92,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 //startActivity(new Intent(getApplicationContext(),SqlDatabase.class));
                 break;*/
 
-            case R.id.bookmarks:
+           /* case R.id.bookmarks:
                 startActivity(new Intent(getApplicationContext(),RoomData.class));
-                break;
+                break;*/
         }
     }
 

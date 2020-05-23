@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
+        <activity android:name=".Activity.homefinal"></activity>
         <activity android:name=".Activity.Animation.Dolphin" />
         <activity android:name=".Activity.RoomData" />
         <activity

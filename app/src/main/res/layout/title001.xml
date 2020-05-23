@@ -4,26 +4,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#000">
 
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/rectangle_14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="-23dp"
         android:alpha="0.6"
-        android:background="@drawable/ic_rectangle_14" />
+        android:background="@drawable/ic_rectangle_14" />-->
 
     <ImageView
         android:id="@+id/rectangle_15"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:alpha="0.5"
-        android:background="@drawable/ic_rectangle_15" />
+        android:background="@drawable/ic_white" />
 
 
 </RelativeLayout>
