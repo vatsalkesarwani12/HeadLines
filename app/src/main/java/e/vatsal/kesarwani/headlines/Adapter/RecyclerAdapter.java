@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
     @NonNull
     @Override
     public RecyclerAdapter.ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.frame,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.frame001,parent,false);
         ExampleViewHolder evh=new ExampleViewHolder(v);
         return evh;
     }
@@ -46,10 +46,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
         final RecycleData currentdata=mRecycleData.get(position);
 
         holder.titletxt.setText(currentdata.getNewstitle());
-        holder.destxt.setText(currentdata.getNewsdescription());
+        //holder.destxt.setText(currentdata.getNewsdescription());
         holder.nametxt.setText(currentdata.getNewsname());
-        holder.content.setText(currentdata.getNewsContent());
-        holder.imgg.setText(currentdata.getImgId());
+        //holder.content.setText(currentdata.getNewsContent());
+        //holder.imgg.setText(currentdata.getImgId());
         Glide.with(context)
                 .load(currentdata.getNewsimage())
                 .into(holder.img);
@@ -80,21 +80,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         private ImageView img;
         private TextView titletxt;
-        private TextView destxt;
+        //private TextView destxt;
         private TextView nametxt;
-        private TextView content;
-        private TextView imgg;
+        //private TextView content;
+        //private TextView imgg;
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
-            titletxt=itemView.findViewById(R.id.title);
-            nametxt=itemView.findViewById(R.id.name);
-            destxt=itemView.findViewById(R.id.description);
-            img=itemView.findViewById(R.id.image);
-            content=itemView.findViewById(R.id.content);
-            imgg=itemView.findViewById(R.id.imm);
+            titletxt=itemView.findViewById(R.id.title001);
+            nametxt=itemView.findViewById(R.id.name001);
+            //destxt=itemView.findViewById(R.id.description);
+            img=itemView.findViewById(R.id.image001);
+            //content=itemView.findViewById(R.id.content);
+            //imgg=itemView.findViewById(R.id.imm);
 
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            /*itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
@@ -107,19 +107,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
                     intent.putExtra(Repository.NAME,nametxt.getText());
                     intent.putExtra(Repository.URLTOIMAGE,imgg.getText());
 
-
                     view.getContext().startActivity(intent);
 
-                    /*if (mListner != null) {
+                    *//*if (mListner != null) {
 
                         if (position != RecyclerView.NO_POSITION) {
                             mListner.onItemClick(position);
                         }
-                    }*/
+                    }*//*
 
                 }
 
-            });
+            });*/
 
         }
     }

@@ -43,7 +43,22 @@
         android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_arrow" />
+        app:srcCompat="@drawable/ic_arrow01" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:alpha=".5"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/seogeprint"
+        android:textSize="16sp"
+        android:text="Here comes the category news ;)"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

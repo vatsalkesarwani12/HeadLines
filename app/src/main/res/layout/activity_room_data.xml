@@ -1,30 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.RoomData"
-    android:gravity="center"
-    android:layout_gravity="center"
-    android:layout_margin="1dp"
-    android:background="@drawable/splash">
+    tools:context=".Activity.RoomData">
+
+    <!--include
+        android:id="@+id/include"
+        layout="@layout/title" />-->
+
+    <ImageView
+        android:elevation="1dp"
+        android:id="@+id/rectangle_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_white"
+        android:scaleType="fitXY"
+        android:background="#f8f8f8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:fontFamily="@font/seogeprint"
+        android:text="Bookmarks"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_15"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/include"
-        layout="@layout/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/roomRecycle"
-        android:layout_marginTop="-15dp"
+        android:id="@+id/include4"
+        layout="@layout/room_recycler_fragments"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/include"
-        tools:listitem="@layout/frame"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_15" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="43dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="60dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_15"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_15"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_15"
+        app:layout_constraintVertical_bias="0.58000004"
+        app:srcCompat="@drawable/ic_arrow" />
+
 
     <!--<Button
     android:id="@+id/roomDeleteAll"
@@ -35,4 +69,4 @@
     android:layout_marginEnd="10dp"
     android:layout_marginTop="15dp" />-->
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

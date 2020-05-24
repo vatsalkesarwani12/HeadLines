@@ -13,6 +13,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public String category;
     private Context context = this;
     private Intent intent;
-
+    private ImageView back;
+    private TextView appTitle;
     private RecyclerView mrecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerAdapter mrecycleAdapter;
@@ -62,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text = (TextView) findViewById(R.id.tee);
+        text = findViewById(R.id.tee);
         mSwipe = findViewById(R.id.refresh);
+        back=findViewById(R.id.back2);
+        appTitle=findViewById(R.id.apptitle);
 
         mSwipe.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         intent = getIntent();
         category = intent.getStringExtra("news");
+        appTitle.setText(category);
         //Toast.makeText(context, ""+category, Toast.LENGTH_SHORT).show();
 
         /*repository = new Repository(getApplication());*/
@@ -163,6 +169,14 @@ public class MainActivity extends AppCompatActivity {
                 mrecyclerView.setLayoutManager(mLayoutManager);
                 mrecyclerView.setAdapter(mrecycleAdapter);
 
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(),homefinal.class));
+                        finish();
+                    }
+                });
+
             }
 
             @Override
@@ -176,6 +190,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        startActivity(new Intent(getApplicationContext(),homefinal.class));
     }
 }

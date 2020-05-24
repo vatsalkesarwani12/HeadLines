@@ -77,7 +77,7 @@ public class DeepNews extends AppCompatActivity {
                 if (a == 1) {
                     save();
                 }
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                startActivity(new Intent(getApplicationContext(), homefinal.class));
             }
         });
 
@@ -123,7 +123,7 @@ public class DeepNews extends AppCompatActivity {
                                     boolean isConnected1 = activeNetwork != null &&
                                             activeNetwork.isConnectedOrConnecting();
                                     if (isConnected1){
-                                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                        startActivity(new Intent(getApplicationContext(),homefinal.class));
                                     }
                                 }
                             });

@@ -36,8 +36,8 @@
             android:layout_margin="1dp"
             android:background="@android:color/white"
             android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:layout_toLeftOf="@+id/deleteSavedNews"/>
+            android:textStyle="bold"/>
+<!--            android:layout_toLeftOf="@+id/deleteSavedNews"-->
 
         <TextView
             android:id="@+id/description"
@@ -64,7 +64,7 @@
             android:textStyle="bold"
             android:layout_margin="1dp"/>
 
-        <ImageView
+        <!--<ImageView
             android:background="@android:color/white"
             android:id="@+id/deleteSavedNews"
             android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_delete_black_24dp"
             android:layout_margin="3dp"
-            android:visibility="gone"/>
+            android:visibility="gone"/>-->
 
     </RelativeLayout>
 

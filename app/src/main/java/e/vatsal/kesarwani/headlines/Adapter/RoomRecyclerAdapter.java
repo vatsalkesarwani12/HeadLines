@@ -40,7 +40,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.frame,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.frame001,parent,false);
         ViewHolder vh=new ViewHolder(v);
         return vh;
     }
@@ -53,14 +53,14 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 .load(news.get(position).getUrlToImage())
                 .into(holder.image);
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
+        /*holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Repository repository=new Repository(application);
                 repository.delete(news.get(position));
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,14 +88,15 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title,name;
-        ImageView image,delete;
+        ImageView image;
+        //ImageView delete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title=itemView.findViewById(R.id.title);
-            name=itemView.findViewById(R.id.name);
-            image=itemView.findViewById(R.id.image);
-            delete=itemView.findViewById(R.id.deleteSavedNews);
-            delete.setVisibility(View.VISIBLE);
+            title=itemView.findViewById(R.id.title001);
+            name=itemView.findViewById(R.id.name001);
+            image=itemView.findViewById(R.id.image001);
+            /*delete=itemView.findViewById(R.id.deleteSavedNews);
+            delete.setVisibility(View.VISIBLE);*/
         }
     }
 }

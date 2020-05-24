@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "275761227477",
+    "firebase_url": "https://headlines-a216f.firebaseio.com",
+    "project_id": "headlines-a216f",
+    "storage_bucket": "headlines-a216f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275761227477:android:a64d9852e93b62bd51245c",
+        "android_client_info": {
+          "package_name": "e.vatsal.kesarwani.headlines"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275761227477-s2jpk6r2fct9u8hcnq9eitbr9ecem24p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC8x4pNst4-M0fOQ9Lom1jjVhhKSE5bfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275761227477-s2jpk6r2fct9u8hcnq9eitbr9ecem24p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
