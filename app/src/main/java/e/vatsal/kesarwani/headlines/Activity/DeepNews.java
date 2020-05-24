@@ -77,6 +77,7 @@ public class DeepNews extends AppCompatActivity {
                 if (a == 1) {
                     save();
                 }
+                if(isConnected)
                 startActivity(new Intent(getApplicationContext(), homefinal.class));
             }
         });

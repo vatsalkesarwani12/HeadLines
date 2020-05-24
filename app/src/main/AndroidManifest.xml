@@ -12,6 +12,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
+
+
         <activity android:name=".Activity.homefinal"></activity>
         <activity android:name=".Activity.Animation.Dolphin" />
         <activity android:name=".Activity.RoomData" />
@@ -29,6 +31,10 @@
             android:name=".Activity.DeepNews"
             android:parentActivityName=".Activity.MainActivity" />
         <activity android:name=".Activity.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4528420242999185~8648939881"/>
     </application>
 
 </manifest>
