@@ -20,6 +20,9 @@ public class splash extends AppCompatActivity {
 
     private Context context=this;
 
+    //font
+    /*textView.setTypeface(ResourcesCompat.getFont(context, R.font.abc_font))*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +69,7 @@ public class splash extends AppCompatActivity {
                 }
                 finally {
                     if (isConnected) {
-                        Intent intent = new Intent(splash.this, HomeActivity.class);
+                        Intent intent = new Intent(splash.this, homefinal.class);
                         startActivity(intent);
                     }
                     else
