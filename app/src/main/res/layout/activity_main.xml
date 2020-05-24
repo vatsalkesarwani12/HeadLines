@@ -1,79 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Activity.MainActivity"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
     android:orientation="vertical"
-    android:background="@drawable/splash">
+    tools:context=".Activity.MainActivity">
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/title" />
+        <include layout="@layout/title" />
 
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <ImageView
+        android:elevation="1dp"
+        android:id="@+id/rectangle_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_white"
+        android:background="#f8f8f8"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/apptitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:fontFamily="@font/seogeprint"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_15"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-<androidx.core.widget.NestedScrollView
-      android:layout_height="match_parent"
-      android:layout_width="match_parent">
-
-    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_15">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="#fff"
-            android:padding="5dp"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/frame" />
+            android:layout_height="match_parent">
 
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tee"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/splash">
 
-    </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#fff"
+                    android:padding="5dp"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/frame001" />
 
-    <!--<androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
 
-        <TextView
-            android:textIsSelectable="true"
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>  -->
+            <!--<androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textIsSelectable="true"
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.core.widget.NestedScrollView>  -->
 
 
-
-</androidx.core.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/back2"
+        android:layout_width="39dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toStartOf="@+id/apptitle"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_15"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_15"
+        app:srcCompat="@drawable/ic_arrow" />
+</androidx.constraintlayout.widget.ConstraintLayout>

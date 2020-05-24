@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fff"
-    >
+    android:background="#fff">
 
     <!--<androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -40,7 +39,7 @@
 
     </androidx.appcompat.widget.Toolbar>-->
 
-    <include
+    <!--<include
         android:id="@+id/include2"
         layout="@layout/title001" />
 
@@ -58,7 +57,33 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/include2"
-        app:layout_constraintTop_toTopOf="@+id/include2" />
+        app:layout_constraintTop_toTopOf="@+id/include2" />-->
+
+    <ImageView
+        android:elevation="1dp"
+        android:id="@+id/rectangle_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_white"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:fontFamily="@font/seogeprint"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_15"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--<Button
         android:layout_width="wrap_content"

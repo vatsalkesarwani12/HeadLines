@@ -39,6 +39,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ExampleViewHol
         holder.catname.setText(list.get(position).getCatName());
         holder.water.setImageResource(list.get(position).getResWatermark());
         holder.conView.setBackground(list.get(position).getColor());
+        String s="Here comes the "+list.get(position).getCatName()+" news ;)";
+        holder.wel.setText(s);
+        holder.wel.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -48,7 +51,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ExampleViewHol
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         private ConstraintLayout conView;
-        private TextView catname;
+        private TextView catname,wel;
         private ImageView water;
 
         public ExampleViewHolder(@NonNull View itemView) {
@@ -56,6 +59,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ExampleViewHol
             conView=itemView.findViewById(R.id.conView);
             catname=itemView.findViewById(R.id.catname);
             water=itemView.findViewById(R.id.water);
+            wel=itemView.findViewById(R.id.welcomeText);
         }
     }
 }
