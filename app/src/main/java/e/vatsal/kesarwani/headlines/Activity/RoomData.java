@@ -46,6 +46,11 @@ public class RoomData extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isConnected){
+                    finishAffinity();
+                    finish();
+                }
+                else
                 startActivity(new Intent(getApplicationContext(),homefinal.class));
             }
         });
