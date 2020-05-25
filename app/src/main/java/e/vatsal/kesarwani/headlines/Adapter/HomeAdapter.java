@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -42,6 +43,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ExampleViewHol
         String s="Here comes the "+list.get(position).getCatName()+" news ;)";
         holder.wel.setText(s);
         holder.wel.setVisibility(View.VISIBLE);
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(context, "Swipe to Open", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
     @Override

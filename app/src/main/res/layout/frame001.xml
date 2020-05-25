@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="132dp">
+    android:layout_height="152dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="140dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
@@ -43,8 +43,7 @@
                 android:fontFamily="@font/roboto_black"
                 android:textSize="16sp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="5dp"
-                android:scrollbars="vertical"/>
+                android:layout_marginStart="5dp" />
 
             <TextView
                 android:id="@+id/name001"
