@@ -48,5 +48,32 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-4528420242999185~8648939881" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="45dp"
+        android:text="Created By"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="23dp"
+        android:text="Vatsal Kesarwani"
+        android:textColor="#000"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>
