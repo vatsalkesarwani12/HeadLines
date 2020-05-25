@@ -44,7 +44,7 @@ public class splash extends AppCompatActivity {
             }
         });
 
-        mAdView = findViewById(R.id.adView);
+        initviews();
         final AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -131,5 +131,9 @@ public class splash extends AppCompatActivity {
                 // to the app after tapping on an ad.
             }
         });
+    }
+
+    private void initviews() {
+        mAdView = findViewById(R.id.adView);
     }
 }

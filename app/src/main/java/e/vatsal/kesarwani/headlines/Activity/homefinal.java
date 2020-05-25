@@ -31,11 +31,7 @@ public class homefinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activtiy);
 
-        fab=findViewById(R.id.fab);
-
-        listCategory=new ArrayList<>();
-
-        intent = new Intent(homefinal.this, Dolphin.class);
+        initviews();
 
         listCategory.add(new HomeList("Technology",R.drawable.ic_tech,getDrawable(R.drawable.ic_darkpurplelist)));
         listCategory.add(new HomeList("Entertainment",R.drawable.ic_enter,getDrawable(R.drawable.ic_purplelist)));
@@ -60,6 +56,14 @@ public class homefinal extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initviews() {
+        fab=findViewById(R.id.fab);
+
+        listCategory=new ArrayList<>();
+
+        intent = new Intent(homefinal.this, Dolphin.class);
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelper=new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {

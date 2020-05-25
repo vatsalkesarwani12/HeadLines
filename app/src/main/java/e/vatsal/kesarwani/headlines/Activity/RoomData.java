@@ -39,10 +39,8 @@ public class RoomData extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_data);
-        /*delete=findViewById(R.id.deleteSavedNews);
-        delete.setVisibility(View.VISIBLE);*/
 
-        back=findViewById(R.id.imageView);
+        initview();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,15 +61,6 @@ public class RoomData extends AppCompatActivity {
 
         newsEntity=new NewsEntity(null,null,null,null,null,null,null,null);
 
-        repository = new Repository(getApplication());
-
-        newss = repository.getAllNews();
-
-        recyclerView=findViewById(R.id.roomRecycle);
-
-        recyclerAdapter=new RoomRecyclerAdapter(this,newss,getApplication());
-        new ItemTouchHelper(itemTouch).attachToRecyclerView(recyclerView);
-        recyclerView.setAdapter(recyclerAdapter);
 
         /*delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +70,23 @@ public class RoomData extends AppCompatActivity {
             }
         });*/
 
+    }
+
+    private void initview() {
+
+        /*delete=findViewById(R.id.deleteSavedNews);
+        delete.setVisibility(View.VISIBLE);*/
+
+        back=findViewById(R.id.imageView);
+        repository = new Repository(getApplication());
+
+        newss = repository.getAllNews();
+
+        recyclerView=findViewById(R.id.roomRecycle);
+
+        recyclerAdapter=new RoomRecyclerAdapter(this,newss,getApplication());
+        new ItemTouchHelper(itemTouch).attachToRecyclerView(recyclerView);
+        recyclerView.setAdapter(recyclerAdapter);
     }
 
     ItemTouchHelper.SimpleCallback itemTouch=new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
