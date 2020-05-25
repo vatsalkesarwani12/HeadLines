@@ -15,7 +15,8 @@
         android:src="@drawable/ic_white"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/headerimage" />
 
     <TextView
         android:id="@+id/textView"
@@ -68,7 +69,8 @@
         android:layout_marginBottom="38dp"
         android:src="@drawable/ic_fab"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/fabicon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

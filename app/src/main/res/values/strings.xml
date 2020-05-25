@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">HeadLines</string>
+    <string name="headerimage">headerImage</string>
+    <string name="delete_icon">delete icon</string>
+    <string name="title">title</string>
+    <string name="mssg">Here comes the category news ;)</string>
+    <string name="arrow_flow">arrow Flow</string>
+    <string name="watermark">watermark</string>
+    <string name="list_name">List Name</string>
+    <string name="fabicon">fabicon</string>
+    <string name="title123">Title</string>
+    <string name="news_image">news image</string>
+    <string name="description">description</string>
+    <string name="name">name</string>
+    <string name="icons">icons</string>
+    <string name="business">Business</string>
+    <string name="health">Health</string>
+    <string name="science">Science</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="sports">Sports</string>
+    <string name="technology">Technology</string>
 </resources>

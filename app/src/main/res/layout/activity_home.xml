@@ -48,7 +48,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:src="@drawable/buss"/>
+                android:src="@drawable/buss"
+                android:contentDescription="@string/icons" />
 
 
             </RelativeLayout>
@@ -76,7 +77,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/health"/>
+                    android:src="@drawable/health"
+                    android:contentDescription="@string/icons" />
 
             </RelativeLayout>
 
@@ -94,7 +96,7 @@
          <TextView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="Business"
+             android:text="@string/business"
              android:layout_weight="1"
              android:textColor="@android:color/black"
              android:textStyle="bold"/>
@@ -102,7 +104,7 @@
          <TextView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="Health"
+             android:text="@string/health"
              android:layout_weight="1"
              android:textColor="@android:color/black"
              android:textStyle="bold"/>
@@ -134,7 +136,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/science"/>
+                    android:src="@drawable/science"
+                    android:contentDescription="@string/icons" />
 
 
             </RelativeLayout>
@@ -162,7 +165,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/enter"/>
+                    android:src="@drawable/enter"
+                    android:contentDescription="@string/icons" />
 
             </RelativeLayout>
 
@@ -181,14 +185,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Science"
+                android:text="@string/science"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Entertainment"
+                android:text="@string/entertainment"
                 android:layout_weight="1"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
@@ -218,7 +222,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/sports"/>
+                    android:src="@drawable/sports"
+                    android:contentDescription="@string/icons" />
 
 
             </RelativeLayout>
@@ -246,7 +251,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/tech"/>
+                    android:src="@drawable/tech"
+                    android:contentDescription="@string/icons" />
 
 
             </RelativeLayout>
@@ -267,14 +273,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Sports"
+                android:text="@string/sports"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Technology"
+                android:text="@string/technology"
                 android:layout_weight="1"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
