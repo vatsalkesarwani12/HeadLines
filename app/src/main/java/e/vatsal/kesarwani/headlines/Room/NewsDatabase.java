@@ -43,8 +43,6 @@ public abstract class NewsDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            //TODO data store
-            //newsDao.insert();
             return null;
         }
     }

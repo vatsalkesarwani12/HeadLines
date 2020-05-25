@@ -65,10 +65,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text = findViewById(R.id.tee);
-        mSwipe = findViewById(R.id.refresh);
-        back=findViewById(R.id.back2);
-        appTitle=findViewById(R.id.apptitle);
+        initviews();
 
         mSwipe.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
@@ -81,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         Gson gson = new GsonBuilder().serializeNulls().create();
 
-        intent = getIntent();
         category = intent.getStringExtra("news");
         appTitle.setText(category);
         //Toast.makeText(context, ""+category, Toast.LENGTH_SHORT).show();
@@ -185,6 +181,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initviews() {
+        text = findViewById(R.id.tee);
+        mSwipe = findViewById(R.id.refresh);
+        back=findViewById(R.id.back2);
+        appTitle=findViewById(R.id.apptitle);
+        intent = getIntent();
     }
 
     @Override

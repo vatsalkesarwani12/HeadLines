@@ -3,7 +3,6 @@
     android:id="@+id/conView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="190dp"
     android:layout_marginTop="-65dp"
@@ -18,7 +17,7 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="95dp"
         android:fontFamily="@font/seogeprint"
-        android:text="List Name"
+        android:text="@string/list_name"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -33,7 +32,8 @@
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_buss" />
+        app:srcCompat="@drawable/ic_buss"
+        android:contentDescription="@string/watermark" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -43,7 +43,8 @@
         android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_arrow01" />
+        app:srcCompat="@drawable/ic_arrow01"
+        android:contentDescription="@string/arrow_flow" />
 
     <TextView
         android:id="@+id/welcomeText"
@@ -55,7 +56,7 @@
         android:layout_marginEnd="21dp"
         android:fontFamily="@font/seogeprint"
         android:textSize="16sp"
-        android:text="Here comes the category news ;)"
+        android:text="@string/mssg"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
