@@ -3,10 +3,10 @@
 This application was built for practising android, retrofit, room and constraint Layouts
 
 ## Top Features of the App
-1. You can see latest news in india.
-2. You can see news category wise.
-3. You can share news to any app.
-4. You can bookmark news and read them offline.
+1. You can get all the latest news updates through this app.
+2. You can read all news based on categories such as Health, Business, Sports, etc.
+3. You can share the shareable link of the news.
+4. There also an bookmark feature in the app, which allow you to read the news offline.
 
 ## Technology
 1. Android
@@ -18,7 +18,7 @@ This application was built for practising android, retrofit, room and constraint
 7. Material I/O
 
 ## Requirements
-1.Android Version 5.0 and above
+1. Android Version 5.0 and above
 2. compileSdkVersion 29
 3. minSdkVersion 21
 4. androidx
