@@ -17,10 +17,11 @@ This application was built for practising android, retrofit, room and constraint
 6. RecyclerView
 7. Material I/O
 
-## Property
-1. compileSdkVersion 29
-2. minSdkVersion 21
-3. androidx
+## Requirements
+1.Android Version 5.0 and above
+2. compileSdkVersion 29
+3. minSdkVersion 21
+4. androidx
 
 # ScreenShots
 Splash Screen
@@ -36,6 +37,3 @@ News Page
 ![](https://github.com/plazzy99/HeadLines/blob/master/app/src/main/res/drawable/mockup07.png)
 Bookmarks
 ![](https://github.com/plazzy99/HeadLines/blob/master/app/src/main/res/drawable/mockup08.png)
-
-## Requirement 
-1. Android Version 5.0 and above
