@@ -1,5 +1,5 @@
 # HeadLines
-## HeadLines is a news app that delivers you with the latest news
+## HeadLines is a news app that delivers you the latest news
 This application was built for practising android, retrofit, room and constraint Layouts
 
 ## Top Features of the App
@@ -17,10 +17,10 @@ This application was built for practising android, retrofit, room and constraint
 6. RecyclerView
 7. Material I/O
 
-##Property
-2. compileSdkVersion 29
-3. minSdkVersion 21
-4. androidx
+## Property
+1. compileSdkVersion 29
+2. minSdkVersion 21
+3. androidx
 
 # ScreenShots
 Splash Screen
