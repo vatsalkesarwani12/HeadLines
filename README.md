@@ -37,3 +37,6 @@ News Page
 ![](https://github.com/plazzy99/HeadLines/blob/master/app/src/main/res/drawable/mockup07.png)
 Bookmarks
 ![](https://github.com/plazzy99/HeadLines/blob/master/app/src/main/res/drawable/mockup08.png)
+
+## Download app from the link
+[Download both the files and then click .apk file](https://drive.google.com/drive/folders/1JzrSdi67XlEFLxXoaegw4W2AnaEdSeql?usp=sharing)
