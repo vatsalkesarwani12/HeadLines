@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,52 +8,17 @@
     android:scrollbars="vertical"
     tools:context=".Activity.DeepNews">
 
-    <!--<include
-        android:id="@+id/head01"
-        layout="@layout/title" />-->
-
-
-    <!--<com.google.android.material.card.MaterialCardView
-        android:layout_below="@+id/head01"
-        android:layout_above="@+id/bar01"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="15dp"
-        android:elevation="4dp"
-        android:padding="5dp"
-        app:cardPreventCornerOverlap="false">-->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bar01">
-        <!--android:layout_below="@+id/head01"-->
 
-        <!--<FrameLayout
+        <ImageView
+            android:id="@+id/newsImage"
             android:layout_width="match_parent"
             android:layout_height="254dp"
-            android:padding="5dp">-->
-
-            <ImageView
-                android:id="@+id/newsImage"
-                android:layout_width="match_parent"
-                android:layout_height="254dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/image" />
-
-
-       <!-- </FrameLayout>-->
-
-        <!--<ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:alpha="0.25"
-            android:background="@color/colorAccent"
-            android:contentDescription="news image" />-->
+            android:scaleType="fitXY"
+            android:src="@drawable/image" />
 
         <ImageView
             android:id="@+id/image00"
@@ -64,10 +28,10 @@
             android:src="@drawable/round_corner" />
 
         <ScrollView
-            android:layout_below="@+id/image00"
             android:id="@+id/news_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/image00"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp">
@@ -139,12 +103,10 @@
 
     </RelativeLayout>
 
-    <!--</com.google.android.material.card.MaterialCardView>-->
-
     <RelativeLayout
         android:id="@+id/bar01"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:paddingLeft="12dp"
         android:paddingRight="12dp">
@@ -178,9 +140,9 @@
             android:id="@+id/news_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_share_black_24dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_share_black_24dp" />
 
     </RelativeLayout>
 
